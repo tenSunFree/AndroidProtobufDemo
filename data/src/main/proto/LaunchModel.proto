@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option java_package = "com.example.androidprotobufdemo";
+option java_outer_classname = "LaunchModel";
+
+message FirstStart {
+
+  enum StartType {
+    SECOND_START = 0;
+    THIRD_START = 1;
+  }
+
+  StartType startType = 1;
+  string firstStartDate = 2;
+}
