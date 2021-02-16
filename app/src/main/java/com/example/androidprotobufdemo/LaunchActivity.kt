@@ -24,6 +24,7 @@ class LaunchActivity : AppCompatActivity() {
         setFullScreen()
         setContentView(R.layout.activity_launch)
         initLaunchModel()
+        initView()
     }
 
     @SuppressLint("ObsoleteSdkInt")
@@ -100,5 +101,12 @@ class LaunchActivity : AppCompatActivity() {
                 .setFirstStartDate(date)
                 .build()
                 .writeTo(FileOutputStream(File(path, fileName)))
+    }
+
+    private fun initView() {
+        image_view.setOnClickListener {
+            startActivity(MainActivity.createMainActivity(this))
+            finish()
+        }
     }
 }
